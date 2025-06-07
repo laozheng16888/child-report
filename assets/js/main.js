@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 在 EmailJS 官网注册并获取您的 PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID
         // 这些凭证应该只在前端使用，如果需要更安全，则需要后端代理
         emailjs.init({
-            publicKey: "YOUR_EMAILJS_PUBLIC_KEY", // <-- 替换为您的 EmailJS 公钥
+            publicKey: "j7OhiNO_Q95f-Ffah", // <-- 替换为您的 EmailJS 公钥
         });
 
         const templateParams = {
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sendReportButton.disabled = true;
         sendReportButton.textContent = '正在发送...';
 
-        emailjs.send("YOUR_EMAILJS_SERVICE_ID", "YOUR_EMAILJS_TEMPLATE_ID", templateParams) // <-- 替换为您的 EmailJS 服务ID 和 模板ID
+        emailjs.send("service_7tw4l3x", "template_f0b3hib", templateParams) // <-- 替换为您的 EmailJS 服务ID 和 模板ID
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 alert('报告已成功发送至您的邮箱，请注意查收！');
