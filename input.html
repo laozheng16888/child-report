@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>填写孩子信息 - 孩子的星座性格与成长建议报告</title>
+    <meta name="description" content="填写孩子出生信息与行为测评，获取个性化育儿报告">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container input-page">
+        <header class="app-header">
+            <h1 class="app-title">填写孩子信息与行为测评</h1>
+            <p class="app-subtitle">请准确填写，这将影响报告的精准性</p>
+        </header>
+
+        <form id="child-info-form">
+            <section class="form-section info-section">
+                <h2 class="section-title">孩子基本信息</h2>
+                <div class="form-group">
+                    <label for="child-name">孩子姓名</label>
+                    <input type="text" id="child-name" placeholder="可用化名，不影响结果，例如：小明 或 小可爱">
+                </div>
+                <div class="form-group">
+                    <label for="birth-date">出生日期</label>
+                    <input type="date" id="birth-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth-time">出生时间（24小时制，精确到分钟）</label>
+                    <input type="time" id="birth-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">接收报告的邮箱地址</label>
+                    <input type="email" id="email" placeholder="请确保邮箱正确，报告将发送至此" required>
+                </div>
+            </section>
+
+            <section class="form-section quiz-section">
+                <h2 class="section-title">孩子行为测评（20题）</h2>
+                <p class="quiz-instruction">请根据孩子日常表现，选择最符合的选项。</p>
+                <div id="quiz-questions-container">
+                    </div>
+            </section>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" id="submit-button">提交并生成报告</button>
+            </div>
+        </form>
+
+        <footer class="privacy-footer">
+            <p>✅ 本测评不收集任何隐私信息</p>
+            <p>✅ 报告仅发送至用户填写邮箱</p>
+            <p>✅ 姓名仅用于个性化称呼，可匿名填写</p>
+        </footer>
+    </div>
+    <script src="assets/js/behaviorQuestions.js"></script>
+    <script src="assets/js/astrology.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
