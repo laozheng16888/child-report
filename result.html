@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>报告已生成 - 孩子的星座性格与成长建议报告</title>
+    <meta name="description" content="您的孩子报告已生成，通过打赏或分享即可解锁。">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container result-page">
+        <header class="app-header">
+            <h1 class="app-title">报告已生成！</h1>
+            <p class="app-subtitle">恭喜您！孩子的个性化成长报告已准备就绪。</p>
+        </header>
+
+        <section class="unlock-section">
+            <p class="unlock-instruction">请选择以下任意一种方式解锁报告，完整内容将发送至您的邮箱。</p>
+
+            <div class="unlock-methods-grid">
+                <div class="unlock-method method-donate">
+                    <h3 class="method-title">方式一：微信打赏解锁</h3>
+                    <p class="method-description">感谢您的支持，这将帮助我们持续提供优质服务。</p>
+                    <div class="qr-code-box">
+                        <img src="assets/images/wechat_qr_code.png" alt="微信收款二维码" class="qr-code-img">
+                    </div>
+                    <button id="payment-confirm-button" class="btn btn-secondary">我已打赏，请发送报告</button>
+                </div>
+
+                <div class="unlock-method method-share">
+                    <h3 class="method-title">方式二：分享免费解锁</h3>
+                    <p class="method-description">分享以下链接给3位好友，当他们访问后即可免费解锁。</p>
+                    <div class="share-link-display">
+                        <p id="share-link-text" class="share-link-url">加载中...</p>
+                        <button class="copy-button" id="copy-share-link" data-tooltip="点击复制链接">复制链接</button>
+                    </div>
+                    <p class="share-status" id="share-status-message">您还需要邀请 <span>3</span> 位好友点击访问...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="email-send-section" class="email-send-section" style="display: none;">
+            <h2 class="section-title">发送报告</h2>
+            <p class="instruction">报告已解锁！请确认您的邮箱地址，然后点击发送按钮。</p>
+            <div class="form-group">
+                <label for="report-email">您的邮箱地址</label>
+                <input type="email" id="report-email" placeholder="再次输入您的邮箱地址">
+            </div>
+            <div class="button-group">
+                <button id="send-report-button" class="btn btn-primary">发送完整报告到邮箱</button>
+            </div>
+        </section>
+
+        <footer class="privacy-footer">
+            <p>✅ 本测评不收集任何隐私信息</p>
+            <p>✅ 报告仅发送至用户填写邮箱</p>
+            <p>✅ 姓名仅用于个性化称呼，可匿名填写</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/reportGenerator.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
