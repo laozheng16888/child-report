@@ -1,0 +1,504 @@
+/* 通用样式和字体 */
+:root {
+    --primary-color: #4CAF50; /* 绿色 */
+    --secondary-color: #FFC107; /* 黄色 */
+    --accent-color: #007BFF; /* 蓝色 */
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-color: #e0e0e0;
+    --bg-light: #f4f7f6;
+    --bg-white: #fff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --button-radius: 25px;
+}
+
+body {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    box-sizing: border-box; /* 确保 padding 不会增加总宽度 */
+}
+
+/* 头部样式 */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-title {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.app-subtitle {
+    color: var(--light-text-color);
+    font-size: 1.1em;
+}
+
+/* 引导页 */
+.welcome-page .intro-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.welcome-page .section-title {
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.welcome-page .dilemma-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.05em;
+    color: var(--light-text-color);
+}
+
+.welcome-page .dilemma-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.welcome-page .dilemma-list li::before {
+    content: '▪';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    top: -2px;
+}
+
+.welcome-page .intro-text {
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.welcome-page .highlight-text {
+    font-weight: bold;
+    color: #d32f2f; /* 更强调的红色 */
+    font-size: 1.2em;
+    margin-top: 25px;
+    display: block; /* 确保换行 */
+}
+
+/* 按钮通用样式 */
+.button-group {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* For potential future anchor tags styled as buttons */
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #fdd835;
+    transform: translateY(-2px);
+}
+
+/* 隐私声明 footer */
+.privacy-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+/* 输入页样式 */
+.input-page .form-section {
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-page .section-title {
+    color: var(--primary-color);
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.input-page .form-group {
+    margin-bottom: 20px;
+}
+
+.input-page .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-page .form-group input[type="text"],
+.input-page .form-group input[type="date"],
+.input-page .form-group input[type="time"],
+.input-page .form-group input[type="email"] {
+    width: 100%; /* Full width */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.input-page .form-group input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.input-page .quiz-instruction {
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+}
+
+.input-page .question-group {
+    background-color: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.2s ease;
+}
+
+.input-page .question-group:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.input-page .question-group p {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.input-page .question-group label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: var(--light-text-color);
+    transition: color 0.2s ease;
+}
+
+.input-page .question-group label:hover {
+    color: var(--text-color);
+}
+
+.input-page .question-group input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.1); /* Slightly larger radio buttons */
+}
+
+.input-page .question-group input[type="radio"]:checked + span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+/* 结果页样式 */
+.result-page .unlock-instruction {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+    margin-bottom: 40px;
+}
+
+.result-page .unlock-methods-grid {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 30px;
+    justify-content: center; /* 居中对齐 */
+    margin-bottom: 40px;
+}
+
+.result-page .unlock-method {
+    flex: 1; /* 弹性伸展 */
+    min-width: 280px; /* 最小宽度，防止过窄 */
+    max-width: 45%; /* PC端每行两个 */
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    box-sizing: border-box; /* 包含 padding */
+}
+
+.result-page .method-title {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.result-page .method-description {
+    color: var(--light-text-color);
+    font-size: 0.95em;
+    margin-bottom: 25px;
+}
+
+.result-page .qr-code-box {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px auto;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* 确保图片不溢出 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+}
+
+.result-page .qr-code-img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* 移除图片底部额外空间 */
+}
+
+.result-page .share-link-display {
+    background-color: #e9ecef;
+    border: 1px dashed #ced4da;
+    padding: 15px;
+    border-radius: 6px;
+    word-break: break-all; /* 长链接自动换行 */
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.result-page .share-link-url {
+    flex-grow: 1;
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.result-page .copy-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.result-page .copy-button:hover {
+    background-color: #0056b3;
+}
+
+.result-page .copy-button[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+
+.result-page .share-status {
+    font-size: 0.95em;
+    color: var(--light-text-color);
+    margin-top: 15px;
+}
+
+.result-page .share-status span {
+    font-weight: bold;
+    color: #d32f2f; /* 突出显示剩余次数 */
+}
+
+.result-page .unlocked-message {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.result-page .email-send-section {
+    margin-top: 40px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.result-page .email-send-section .section-title {
+    color: var(--primary-color);
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.result-page .email-send-section .instruction {
+    color: var(--light-text-color);
+    margin-bottom: 25px;
+}
+
+/* Disabled state for buttons */
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+        box-shadow: none; /* 移动端可以取消阴影 */
+    }
+
+    .app-title {
+        font-size: 1.8em;
+    }
+
+    .app-subtitle {
+        font-size: 1em;
+    }
+
+    .welcome-page .section-title {
+        font-size: 1.5em;
+    }
+
+    .welcome-page .highlight-text {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .input-page .section-title {
+        font-size: 1.4em;
+    }
+
+    .input-page .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .input-page .question-group {
+        padding: 15px;
+    }
+
+    .input-page .question-group p {
+        font-size: 0.95em;
+    }
+
+    .input-page .question-group label {
+        font-size: 0.9em;
+    }
+
+    .result-page .unlock-methods-grid {
+        flex-direction: column; /* 移动端堆叠 */
+    }
+
+    .result-page .unlock-method {
+        max-width: 100%; /* 占满宽度 */
+        padding: 20px;
+    }
+
+    .result-page .method-title {
+        font-size: 1.3em;
+    }
+
+    .result-page .qr-code-box {
+        width: 150px;
+        height: 150px;
+    }
+
+    .result-page .share-link-display {
+        flex-direction: column; /* 复制按钮换行 */
+        align-items: stretch;
+    }
+
+    .result-page .share-link-url {
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .result-page .copy-button {
+        width: 100%;
+    }
+
+    .result-page .email-send-section .section-title {
+        font-size: 1.4em;
+    }
+}
+
+/* Tooltip for copy button (basic) */
+[data-tooltip] {
+    position: relative;
+}
+/* The actual tooltip style is in JS, or can be a more advanced CSS-only solution */
